@@ -1,29 +1,32 @@
-// ----------------------------------------------------------------------------------------------------------- Exercise 1: Get the array of all directors
-
 const movies = require("./data");
 
-function getAllDirectors(movies) {
-  let result = movies.map(movie => movie.director);
-  console.log("EXERCICE 1 ->", result);
-  return result;
-}
+// Exercise 1: ------------------------------------------------------------------------------------------------------------ Get the array of all directors
 
-// ------------------------------------------------------------------------------------------------------- Exercise 2: Get the films of a certain director
+const getAllDirectors = array => array.map(a => a.director);
+console.log("EXERCICE 1 ->", getAllDirectors(movies));
 
-function getMoviesFromDirector(array, director) {
-  let result = array.filter(a => a.director === director)
-  return result;
-}
+// Exercise 2: -------------------------------------------------------------------------------------------------------- Get the films of a certain director
 
-console.log("EXERCISE 2 director: Charles Chaplin →", getMoviesFromDirector(movies, "Charles Chaplin"))
+const getMoviesFromDirector = (array, director) => array.filter(a => a.director === director);
+console.log("EXERCISE 2 director: Steven Spielberg →", getMoviesFromDirector(movies, "Steven Spielberg"));
 
-// ------------------------------------------------------------------------------------- Exercise 3: Calculate the average of the films of a given director
+// Exercise 3: ------------------------------------------------------------------------------------- Calculate the average of the films of a given director
 
 function moviesAverageOfDirector(array, director) {
+  let moviesList = array.filter(a => a.director === director);
+  let moviesNumber = moviesList.length;
 
+  const sumaScores = moviesList.reduce((acc, movie) => {
+    return acc += movie.score;
+  }, 0);
+
+  let result = parseFloat((sumaScores / moviesNumber).toFixed(2));
+  return result;
 }
 
-// Exercise 4:  Alphabetic order by title 
+console.log("EXERCISE 3 media director: Steven Spielberg →", moviesAverageOfDirector(movies, "Steven Spielberg"));
+
+// Exercise 4: ----------------------------------------------------------------------------------------------------------------- Alphabetic order by title 
 function orderAlphabetically(array) {
 
 }
