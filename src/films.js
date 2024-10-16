@@ -27,18 +27,25 @@ console.log("EXERCISE 3 media director: Steven Spielberg →", moviesAverageOfDi
 
 //------------------------------------------------------------------- Exercise 4 --------------------------------------------------------------------------
 
-const orderAlphabetically = array => 
+const orderAlphabetically = array =>
   array.map(a => a.title)
-  .sort((a, b) => a < b ? -1 : 1)
-  .slice(0, 20)
+    .sort((a, b) => a < b ? -1 : 1)
+    .slice(0, 20)
 
 console.log("EXERCISE 4:", orderAlphabetically(movies));
 
 //------------------------------------------------------------------- Exercise 5 --------------------------------------------------------------------------
 
-function orderByYear() { //ascending
-
+const orderByYear = array => {
+  let result = array.slice().sort((a, b) => {
+    if (a.year < b.year) return -1;
+    if (a.year > b.year) return 1;
+    return a.title < b.title ? -1 : 1;
+  })
+  return result;
 }
+
+//console.log("EXERCISE 5:", orderByYear(movies));
 
 //------------------------------------------------------------------- Exercise 6 --------------------------------------------------------------------------
 function moviesAverageByCategory() {
