@@ -1,60 +1,65 @@
 const movies = require("./data");
 
-// Exercise 1: ------------------------------------------------------------------------------------------------------------ Get the array of all directors
+//------------------------------------------------------------------- Exercise 1 --------------------------------------------------------------------------
 
 const getAllDirectors = array => array.map(a => a.director);
 console.log("EXERCICE 1 ->", getAllDirectors(movies));
 
-// Exercise 2: -------------------------------------------------------------------------------------------------------- Get the films of a certain director
+//------------------------------------------------------------------- Exercise 2 --------------------------------------------------------------------------
 
 const getMoviesFromDirector = (array, director) => array.filter(a => a.director === director);
 console.log("EXERCISE 2 director: Steven Spielberg →", getMoviesFromDirector(movies, "Steven Spielberg"));
 
-// Exercise 3: ------------------------------------------------------------------------------------- Calculate the average of the films of a given director
+//------------------------------------------------------------------- Exercise 3 --------------------------------------------------------------------------
 
 function moviesAverageOfDirector(array, director) {
   let moviesList = array.filter(a => a.director === director);
-  let moviesNumber = moviesList.length;
 
   const sumaScores = moviesList.reduce((acc, movie) => {
     return acc += movie.score;
   }, 0);
 
-  let result = parseFloat((sumaScores / moviesNumber).toFixed(2));
+  let result = parseFloat((sumaScores / moviesList.length).toFixed(2));
   return result;
 }
 
 console.log("EXERCISE 3 media director: Steven Spielberg →", moviesAverageOfDirector(movies, "Steven Spielberg"));
 
-// Exercise 4: ----------------------------------------------------------------------------------------------------------------- Alphabetic order by title 
-function orderAlphabetically(array) {
+//------------------------------------------------------------------- Exercise 4 --------------------------------------------------------------------------
+
+const orderAlphabetically = array => 
+  array.map(a => a.title)
+  .sort((a, b) => a < b ? -1 : 1)
+  .slice(0, 20)
+
+console.log("EXERCISE 4:", orderAlphabetically(movies));
+
+//------------------------------------------------------------------- Exercise 5 --------------------------------------------------------------------------
+
+function orderByYear() { //ascending
 
 }
 
-// Exercise 5: Order by year, ascending
-function orderByYear() {
-
-}
-
-// Exercise 6: Calculate the average of the movies in a category
+//------------------------------------------------------------------- Exercise 6 --------------------------------------------------------------------------
 function moviesAverageByCategory() {
 
 }
 
-// Exercise 7: Modify the duration of movies to minutes
+//------------------------------------------------------------------- Exercise 7 --------------------------------------------------------------------------
 function hoursToMinutes() {
 
 }
 
-// Exercise 8: Get the best film of a year
+//------------------------------------------------------------------- Exercise 8 --------------------------------------------------------------------------
 function bestFilmOfYear() {
 
 }
 
 
 
-// The following is required to make unit tests work.
-/* Environment setup. Do not modify the below code. */
+//==========================================================================================================================================================
+//The following is required to make unit tests work. Environment setup. Do not modify the below code.
+
 if (typeof module !== 'undefined') {
   module.exports = {
     getAllDirectors,
