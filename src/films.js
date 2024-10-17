@@ -45,24 +45,32 @@ const orderByYear = array => {
   return result;
 }
 
-//console.log("EXERCISE 5:", orderByYear(movies));
+console.log("EXERCISE 5:", orderByYear(movies));
 
 //------------------------------------------------------------------- Exercise 6 --------------------------------------------------------------------------
-function moviesAverageByCategory() {
 
+const moviesAverageByCategory = (array, genre) => {
+  let genreMovies = array.filter(movie => movie.genre.includes(genre));
+  let sumaScoresGenre = genreMovies.reduce((acc, movie) => {
+    return acc += movie.score;
+  }, 0);
+  let result = parseFloat((sumaScoresGenre / genreMovies.length).toFixed(2));
+  return result;
 }
 
+console.log("EXERCISE 6: media genre Comedy →", moviesAverageByCategory(movies, "Comedy"));
+
 //------------------------------------------------------------------- Exercise 7 --------------------------------------------------------------------------
+
 function hoursToMinutes() {
 
 }
 
 //------------------------------------------------------------------- Exercise 8 --------------------------------------------------------------------------
+
 function bestFilmOfYear() {
 
 }
-
-
 
 //==========================================================================================================================================================
 //The following is required to make unit tests work. Environment setup. Do not modify the below code.
