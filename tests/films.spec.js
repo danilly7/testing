@@ -303,11 +303,15 @@ describe('Function "moviesAverageByCategory"', () => {
   });
 
   it('should return a number', () => {
-    expect(typeof moviesAverageByCategory(movies, 'Drama')).toBe('number');
+    expect(typeof moviesAverageByCategory(movies, 'Western')).toBe('number');
   });
 
   it('should be different from NaN', () => {
-    expect(moviesAverageByCategory(movies, 'Drama')).not.toBeNaN();
+    expect(moviesAverageByCategory(movies, 'Music')).not.toBeNaN();
+  });
+
+  it('should return a new array, not update the original one', () => {
+    expect(moviesAverageByCategory(movies, 'War')).not.toEqual(movies);
   });
 
   it(' should return the average score of movies selecting only the genre. With 2 decimals! ', () => {

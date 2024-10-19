@@ -14,11 +14,9 @@ console.log("EXERCISE 2 director: Steven Spielberg →", getMoviesFromDirector(m
 
 function moviesAverageOfDirector(array, director) {
   let moviesList = array.filter(a => a.director === director);
-
   const sumaScores = moviesList.reduce((acc, movie) => {
     return acc += movie.score;
   }, 0);
-
   let result = parseFloat((sumaScores / moviesList.length).toFixed(2));
   return result;
 }
@@ -62,9 +60,36 @@ console.log("EXERCISE 6: media genre Comedy →", moviesAverageByCategory(movies
 
 //------------------------------------------------------------------- Exercise 7 --------------------------------------------------------------------------
 
-function hoursToMinutes() {
+const convertToMinutes = (duration) => {
+  if (typeof duration !== 'string') return 0;
 
+  const regexHoursOnly = /^(\d+)h$/;
+  const regexHoursAndMinutes = /(?:(\d+)h)?\s*(\d+)?m?/;
+
+  if (regexHoursOnly.test(duration)) {
+    const match = duration.match(regexHoursOnly);
+    const hours = parseInt(match[1]);
+    return hours * 60;
+  }
+
+  if (regexHoursAndMinutes.test(duration)) {
+    const match = duration.match(regexHoursAndMinutes);
+    const hours = parseInt(match[1]);
+    const minutes = parseInt(match[2]);
+    return hours * 60 + minutes;
+  }
+
+  return 0;
+};
+
+const hoursToMinutes = array => {
+  return array.map(a => {
+    const newDuration = convertToMinutes(a.duration);
+    return {...a, duration: newDuration}
+  });
 }
+
+console.log("EXERCISE 7:", hoursToMinutes(movies));
 
 //------------------------------------------------------------------- Exercise 8 --------------------------------------------------------------------------
 
