@@ -3,12 +3,12 @@ const movies = require("./data");
 //------------------------------------------------------------------- Exercise 1 --------------------------------------------------------------------------
 
 const getAllDirectors = array => array.map(a => a.director);
-console.log("EXERCICE 1 ->", getAllDirectors(movies));
+console.log("EXERCICE 1: Directores ->", getAllDirectors(movies));
 
 //------------------------------------------------------------------- Exercise 2 --------------------------------------------------------------------------
 
 const getMoviesFromDirector = (array, director) => array.filter(a => a.director === director);
-console.log("EXERCISE 2 director: Steven Spielberg →", getMoviesFromDirector(movies, "Steven Spielberg"));
+console.log("EXERCISE 2: movies del director Steven Spielberg →", getMoviesFromDirector(movies, "Steven Spielberg"));
 
 //------------------------------------------------------------------- Exercise 3 --------------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ function moviesAverageOfDirector(array, director) {
   return result;
 }
 
-console.log("EXERCISE 3 media director: Steven Spielberg →", moviesAverageOfDirector(movies, "Steven Spielberg"));
+console.log("EXERCISE 3: la nota media del director Steven Spielberg →", moviesAverageOfDirector(movies, "Steven Spielberg"));
 
 //------------------------------------------------------------------- Exercise 4 --------------------------------------------------------------------------
 
@@ -30,7 +30,7 @@ const orderAlphabetically = array =>
     .sort((a, b) => a < b ? -1 : 1)
     .slice(0, 20)
 
-console.log("EXERCISE 4:", orderAlphabetically(movies));
+console.log("EXERCISE 4: movies ordenadas alfabeticamente y luego las 20 primeras que aparecen →", orderAlphabetically(movies));
 
 //------------------------------------------------------------------- Exercise 5 --------------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ const orderByYear = array => {
   return result;
 }
 
-console.log("EXERCISE 5:", orderByYear(movies));
+console.log("EXERCISE 5: movies ordenadas por año →", orderByYear(movies));
 
 //------------------------------------------------------------------- Exercise 6 --------------------------------------------------------------------------
 
@@ -56,7 +56,7 @@ const moviesAverageByCategory = (array, genre) => {
   return result;
 }
 
-console.log("EXERCISE 6: media genre Comedy →", moviesAverageByCategory(movies, "Comedy"));
+console.log("EXERCISE 6: la nota media del género Comedy →", moviesAverageByCategory(movies, "Comedy"));
 
 //------------------------------------------------------------------- Exercise 7 --------------------------------------------------------------------------
 
@@ -85,17 +85,28 @@ const convertToMinutes = (duration) => {
 const hoursToMinutes = array => {
   return array.map(a => {
     const newDuration = convertToMinutes(a.duration);
-    return {...a, duration: newDuration}
+    return { ...a, duration: newDuration }
   });
 }
 
-console.log("EXERCISE 7:", hoursToMinutes(movies));
+console.log("EXERCISE 7: la clase duration puesta en minutos", hoursToMinutes(movies));
 
 //------------------------------------------------------------------- Exercise 8 --------------------------------------------------------------------------
 
-function bestFilmOfYear() {
+// function bestFilmOfYear() {
 
+// }
+
+const bestFilmOfYear = (array, yearSelected) => {
+  let moviesSameYear = array.filter(a => a.year === yearSelected);
+  if (moviesSameYear.length === 0) return [];
+
+  let bestMovie = moviesSameYear.slice().sort((a, b) => b.score - a.score);
+  return [bestMovie[0]];
 }
+
+console.log("EXERCISE 8: year 2001 mejor peli según el score →", bestFilmOfYear(movies, 2001));
+
 
 //==========================================================================================================================================================
 //The following is required to make unit tests work. Environment setup. Do not modify the below code.
