@@ -93,10 +93,6 @@ console.log("EXERCISE 7: la clase duration puesta en minutos", hoursToMinutes(mo
 
 //------------------------------------------------------------------- Exercise 8 --------------------------------------------------------------------------
 
-// function bestFilmOfYear() {
-
-// }
-
 const bestFilmOfYear = (array, yearSelected) => {
   let moviesSameYear = array.filter(a => a.year === yearSelected);
   if (moviesSameYear.length === 0) return [];
@@ -106,7 +102,6 @@ const bestFilmOfYear = (array, yearSelected) => {
 }
 
 console.log("EXERCISE 8: year 2001 mejor peli según el score →", bestFilmOfYear(movies, 2001));
-
 
 //==========================================================================================================================================================
 //The following is required to make unit tests work. Environment setup. Do not modify the below code.
