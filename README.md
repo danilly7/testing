@@ -1,86 +1,68 @@
-# Sprint 3 IT Academy | Video management tool
+# Sprint 3. JAVASCRIPT - S3. Entrega testing
 
-## Introduction
+## Descripción del proyecto
 
-A company in the audiovisual sector has asked us for a web application that will allow their employees to quickly find movies from a large database they have, since the process is currently done manually.
-
-You will be in charge of setting up the core of the application: all the logic of filtering and sorting of movies. You have 2 weeks to finish, which is how long this sprint lasts.
-
+Este proyecto está diseñado para trabajar con una serie de funciones de JavaScript que manipulan datos de películas, tales como filtrar, ordenar y calcular promedios. A continuación, se detallan las funcionalidades y ejercicios implementados, junto con un conjunto de pruebas unitarias para validar el correcto funcionamiento de cada una de ellas.
+<br>
 <br>
 
-## Requirements
-
-
-1. Clone this repo
-```bash
-$ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-sprint-3-movies
-```
-
-2. Unlink your repo from the itacademy repository
-```bash
-$ git remote rm origin
-```
-
-3. Link your repo to the repository you have to create in your github account
-```bash
-$ git remote add origin <your repo name!>
-```
-
+## Estructura del Proyecto
+- data.js: Contiene los datos de las películas que serán manipuladas.
+- films.js: Archivo principal que contiene las funciones de manipulación de las películas.
+- tests/films.spec.js: Pruebas unitarias para verificar el correcto funcionamiento de las funciones.
 <br>
 
-## Submission
-
-1. Upon completion, run the following commands:
-
-```bash
-$ git add .
-$ git commit -m "Sprint Solution"
-$ git push origin master
-```
-
-2. Create Pull Request.
-
-3. Upload the link to the virtual campus so that your mentor can correct it and give you feedback.
-
-
-
+## Ejercicios implementados
+- Ejercicio 1: Obtener Todos los directores
+- Ejercicio 2: Obtener Películas de un director
+- Ejercicio 3: Calcular Promedio de las películas de un director
+- Ejercicio 4: Ordenar Películas alfabéticamente y luego mostrar las 20 primeras
+- Ejercicio 5: Ordenar Películas por año
+- Ejercicio 6: Calcular Promedio por género
+- Ejercicio 7: Convertir Duración a minutos
+- Ejercicio 8: Mejor Película por año
 <br>
 
-## Introduction
-
-The statement of the exercise is available on the virtual campus.
-
+## Pruebas Unitarias
+Cada función está acompañada de pruebas unitarias que verifican su comportamiento utilizando el framework de pruebas Jest. Estas pruebas se encuentran en el archivo films.spec.js.
+<br>
 <br>
 
-## Tests!
-
-
-```shell
-$ npm install
-$ npm run test:watch
-```
-
-And last, open the generated `test-results.html` file with the "Live Server" VSCode extension to see test results.
-
-Apart from the statement, you will know exactly what you are asked to do by looking at the file `tests/films.spec.js`, all tests are already defined here!
-
+## Tecnologías Utilizadas
+- Node.js
+- Jest para las pruebas
 <br>
 
-## Instructions
+## Instalación para ver el proyecto
 
-You have the following indications from the frontend responsible:
+Para instalar este proyecto localmente:
 
-- It is mandatory to implement all loops in ES6 (using map, reduce, filter and sort to manipulate arrays).
+1. Clona el repositorio:
 
-- As at the moment we don't consume data from a server using an API, we will work with data from the src/data.js archive. For the moment we will implement the logic using
-an array of information about 250 movies.
+   ```bash
+   git clone https://github.com/danilly7/s3.EntregaTesting.git
+   ``` 
+   
+2. Navega a la carpeta del proyecto:
 
-- The implementation is about processing this array of movies, to display it as requested in each exercise.
+   ```bash
+   cd s3.EntregaTesting
+   ```
+3. Abrir el archivo HTML `test-results.html` y visualizar las validaciones en el navegador de preferencia.
+<br>
 
-- The logic to implement will be placed in the src/films.js file.
+## Ejecución de las validaciones
+Para ejecutar las pruebas, sigue los siguientes pasos:
+1. Asegúrate de tener Node.js instalado en tu sistema.
+2. Instala las dependencias necesarias ejecutando el comando:
+ ```bash
+   npm install
+   ``` 
+3. Ejecuta las pruebas con el siguiente comando (que también mostrará los console.logs):
+ ```bash
+   npm run test:watch
+   ``` 
+<br>
 
-- You don't need to show the result of each function on the screen. Your goal is to pass the tests.  More information on how to program oriented to pass tests at the end of the document.
-
-- Don't forget to include the capture of the test results in the virtual campus.
-
-
+## Autora
+- Danilly Condori Lerpido - [GitHub](https://github.com/danilly7)
