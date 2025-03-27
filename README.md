@@ -1,4 +1,4 @@
-# Sprint 3. JAVASCRIPT - S3. Entrega testing
+# JAVASCRIPT - Testing
 
 ## Descripción del proyecto
 
@@ -40,13 +40,13 @@ Para instalar este proyecto localmente:
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/danilly7/s3.EntregaTesting.git
+   git clone https://github.com/danilly7/testing.git
    ``` 
    
 2. Navega a la carpeta del proyecto:
 
    ```bash
-   cd s3.EntregaTesting
+   cd testing
    ```
 3. Abrir el archivo HTML `test-results.html` y visualizar las validaciones en el navegador de preferencia.
 <br>
